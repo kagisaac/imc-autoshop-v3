@@ -17,7 +17,7 @@ const login = () => {
     // Add your login logic here
     if (email && password) {
       // Example: Authenticate user using API
-      console.log('Logging in...');
+      // console.log('Logging in...');
     //   router.push('/dashboard'); // Redirect to dashboard after successful login
     } else {
       setError('Please fill in all fields.');
