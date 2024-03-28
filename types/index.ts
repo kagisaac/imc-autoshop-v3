@@ -1,9 +1,10 @@
 import { MouseEventHandler } from "react";
 
 export interface CarProps {
+  carImage: { image: string }[];
   city_mpg: number;
   class: string;
-  combination_mpg: number;
+  combination_mpg: string;
   cylinders: number;
   displacement: number;
   drive: string;
@@ -15,8 +16,7 @@ export interface CarProps {
   year: number;
   price:number;
   reasingPrice:number
-   carImage: { image: string }[];
-  //  carImage:string
+  
   
 }
 

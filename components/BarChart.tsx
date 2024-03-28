@@ -19,6 +19,13 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+interface Dataset {
+    label: string;
+    data: number[];
+    borderColor: string;
+    backgroundColor: string;
+}
+
 interface ChartData {
     labels: string[];
     datasets: {
@@ -29,38 +36,88 @@ interface ChartData {
     }[];
 }
 const BarChart = () => {
-  const [chartData, setChartData] = useState({
-    datasets: [],
-  });
+  // const [chartData, setChartData] = useState({
+  //   datasets: [],
+  // });
 
-  const [chartOptions, setChartOptions] = useState({});
-
-  useEffect(() => {
-    setChartData({
+  // const [chartOptions, setChartOptions] = useState({});
+  const [chartData, setChartData] = useState<{
+        labels: string[];
+        datasets: Dataset[]; // Specify the type as Dataset[]
+    }>({
         labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
-        datasets: [
-            {
-                label:  'Sales $',
-                data: [1812, 22201, 19490, 17938, 24182, 17842, 22475],
-                borderColor: 'rgb(53, 162, 235)',
-                backgroundColor: 'rgb(53, 162, 235, 0.4',
-              }, 
-        ]
-    })
-    setChartOptions({
+        datasets: [],
+    });
+    const [chartOptions, setChartOptions] = useState<any>({
         plugins: {
             legend: {
                 position: 'top',
             },
             title: {
                 display: true,
-                text: 'Daily Revenue'
-            }
+                text: 'Daily Revenue',
+            },
         },
         maintainAspectRatio: false,
-        responsive: true
-    })
-  }, [])
+        responsive: true,
+    });
+    useEffect(() => {
+        // Set chart data
+        setChartData({
+            labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
+            datasets: [
+                {
+                    label: 'Sales $',
+                    data: [1812, 22201, 19490, 17938, 24182, 17842, 22475],
+                    borderColor: 'rgb(53, 162, 235)',
+                    backgroundColor: 'rgb(53, 162, 235, 0.4)',
+                },
+            ],
+        });
+
+        // Set chart options
+        setChartOptions({
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Daily Revenue',
+                },
+            },
+            maintainAspectRatio: false,
+            responsive: true,
+        });
+    }, []);
+
+
+  // useEffect(() => {
+  //   setChartData({
+  //       labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
+  //       datasets: [
+  //           {
+  //               label:  'Sales $',
+  //               data: [1812, 22201, 19490, 17938, 24182, 17842, 22475],
+  //               borderColor: 'rgb(53, 162, 235)',
+  //               backgroundColor: 'rgb(53, 162, 235, 0.4',
+  //             }, 
+  //       ]
+  //   })
+  //   setChartOptions({
+  //       plugins: {
+  //           legend: {
+  //               position: 'top',
+  //           },
+  //           title: {
+  //               display: true,
+  //               text: 'Daily Revenue'
+  //           }
+  //       },
+  //       maintainAspectRatio: false,
+  //       responsive: true
+  //   })
+  // }, [])
 
   return (
     <>
