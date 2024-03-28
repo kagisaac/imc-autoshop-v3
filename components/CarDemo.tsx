@@ -1,12 +1,14 @@
 import React from 'react'
 import { CustomFilter, SearchBar } from '.'
-import { HomeProps } from "@/types"
+import { CarProps, HomeProps } from "@/types"
 // import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction,imcCars } from '@/constants'
 import CarCard from './CarCard';
 import ShowMore from './ShowMore';
 
-
+interface CarCardProps {
+  car: CarProps;
+}
 
 
 export default async function CarDemo(){
@@ -39,8 +41,8 @@ export default async function CarDemo(){
           <section>
             <div className='home__cars-wrapper'>
               {imcCars?.map((car) => (
-                <CarCard car={car} />
-              // <p>we have car</p>
+                <CarCard car={car}/>
+              
               ))}
             </div>
 

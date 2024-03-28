@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment, useState ,FormEvent } from "react";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { CustomButton } from ".";
@@ -30,16 +30,16 @@ const UpdateCars = ({ isOpen, closeModal }: CarDetailsProps) => {
   
   
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
+  const { name, value } = e.currentTarget;
+  setFormData({ ...formData, [name]: value });
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData); // Submit the form data
-    closeModal(); // Close the modal after form submission
-  };
+const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  console.log(formData); // Submit the form data
+  closeModal(); // Close the modal after form submission
+};
 
   return (
      <>
