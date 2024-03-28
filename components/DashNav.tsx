@@ -1,14 +1,18 @@
 "use client";
 import { useState, useEffect, useRef, MouseEvent } from 'react';
-import { FaBell, FaChevronDown, FaSearch } from 'react-icons/fa';
+import { FaBell, FaChevronDown, FaSearch, FaThumbsUp } from 'react-icons/fa';
+import { CiMenuBurger, CiMenuKebab } from "react-icons/ci";
 import Image from 'next/image';
 import Link from 'next/link';
+import DashSideBar from './DashSideBar';
 
 const DashNav = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
+  const displayMenu= ()=>{
+    setShowMenu(!showMenu);
+  }
   const toggleDropdown = () => {
     setDropDown(!dropDown);
   };
@@ -41,6 +45,19 @@ const DashNav = () => {
             <div>
               <Image src="/profile1.jpeg" alt="close" width={50} height={50} className="object-contain rounded-full bg-sky-100" />
             </div>
+            <div className='block md:hidden' >
+             
+              <CiMenuBurger onClick={displayMenu}/>
+            </div>
+              <div className="absolute left-0 z-200 ">
+            {
+
+              showMenu&&(
+                <DashSideBar/>
+              )
+            }
+              </div>
+          
             <div ref={dropdownRef}>
               {/* <div onClick={toggleDropdown} className="cursor-pointer">
                 <FaChevronDown />

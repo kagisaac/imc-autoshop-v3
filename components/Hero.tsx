@@ -61,7 +61,7 @@ const Hero = () => {
       
       <div className="hero__image-container max-h-[620px] pt-10 ">
         <div className="hero__image " >
-          <Image src="/autoshop1.png" alt="hero" fill className="object-contain shadow-sm " />
+          <Image src="/imc-flyer1.png" alt="hero" fill className="object-contain shadow-sm " />
         </div>
 
         {/* <div className="hero__image-overlay" /> */}

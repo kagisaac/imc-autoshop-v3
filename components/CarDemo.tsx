@@ -17,7 +17,7 @@ export default async function CarDemo(){
 
     
   return (
-    <div className='  md:w-full sm:w-[350px]'>
+    <div className='  md:w-full sm:w-[full] '>
     <div className='mt-12   padding-x padding-y max-width' id='discover'>
         <div className='home__text-container'>
           <h1 className='text-4xl font-extrabold'>Car Catalogue</h1>
@@ -38,8 +38,8 @@ export default async function CarDemo(){
      
     </div>
         {!isDataEmpty ? (
-          <section>
-            <div className='home__cars-wrapper'>
+          <section className=''>
+            <div className='home__cars-wrapper '>
               {imcCars?.map((car,index) => (
                 <CarCard key={index} car={car}/>
               
