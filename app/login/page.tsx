@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import { BiLogoGmail } from "react-icons/bi";
 import { FaFacebook, FaGithub } from "react-icons/fa";
-const login = () => {
+const Login = () => {
 //   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -117,4 +117,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login

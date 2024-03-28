@@ -40,8 +40,8 @@ export default async function CarDemo(){
         {!isDataEmpty ? (
           <section>
             <div className='home__cars-wrapper'>
-              {imcCars?.map((car) => (
-                <CarCard car={car}/>
+              {imcCars?.map((car,index) => (
+                <CarCard key={index} car={car}/>
               
               ))}
             </div>

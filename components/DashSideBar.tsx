@@ -28,12 +28,12 @@ export const NavLinks = [
     link: "/dashboard/orders",
     icon: <FaMoneyBillAlt />,
   },
-  {
-    id: "4",
-    name: "History",
-    link: "/history",
-    icon: <FaHistory />,
-  },
+  // {
+  //   id: "4",
+  //   name: "History",
+  //   link: "/history",
+  //   icon: <FaHistory />,
+  // },
 ];
 const DashSideBar = () => {
   return (
